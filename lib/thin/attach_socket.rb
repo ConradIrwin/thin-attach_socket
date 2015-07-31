@@ -1,3 +1,10 @@
+require 'eventmachine'
+
+# Sanity-check that our EventMachine has the required methods:
+unless EventMachine.respond_to?(:attach_server)
+  raise "You need an EventMachine that supports .attach_server. That can be EventMachine-LE or EventMachine 1.0.4 and above."
+end
+
 # Based on Patrick Collison's commit to stripe/thin:
 # https://github.com/stripe/thin/commit/42e29ba23a136a30dc11a1c9dff1fe1187dc9eee
 #

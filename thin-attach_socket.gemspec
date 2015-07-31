@@ -6,9 +6,10 @@ Gem::Specification.new do |s|
   s.email = "conrad.irwin@gmail.com"
   s.homepage = "http://github.com/ConradIrwin/thin-attach_socket"
   s.summary = "Provides Thin::Backends::AttachServer for booting thin on an existing socket."
-  s.description = "This is useful for running thin behind einhorn, and requires eventmachine-le"
+  s.description = "This is useful for running thin behind einhorn, and requires a recent eventmachine"
   s.files = `git ls-files`.split("\n")
   s.require_path = "lib"
   s.add_dependency 'thin'
-  s.add_dependency 'eventmachine-le'
+
+  s.requirements << 'eventmachine >= 1.0.4 or eventmachine-le'
 end
