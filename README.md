@@ -2,13 +2,15 @@ Provides `Thin::Backends::AttachSocket` for booting a thin server on an already 
 Socket.
 
 This is useful when running thin inside [einhorn](https://github.com/stripe/einhorn), and
-it requires [eventmachine-le](https://github.com/ibc/EventMachine-LE).
+it requires either a recent [eventmachine](https://github.com/eventmachine/eventmachine) gem
+(1.0.4 and up implement the required functions), or
+[eventmachine-le](https://github.com/ibc/EventMachine-LE).
 
 Installation
 ============
 
 Either `gem install thin-attach_socket`, or add `gem 'thin-attach_socket'` to your
-`Gemfile` and run `bundle`.
+`Gemfile`, and run `bundle`.
 
 Usage
 =====
@@ -46,4 +48,3 @@ thin-attach_socket is released under the Ruby License, http://www.ruby-lang.org/
 
 It was heavily based on the [work](https://github.com/stripe/thin/commit/42e29ba23a136a30dc11a1c9dff1fe1187dc9eee) of
 Patrick Collison at Stripe.
-
